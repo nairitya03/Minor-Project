@@ -1,9 +1,9 @@
-# Minor Project On LIVE FACE-DETECTION
+# Minor Project on ## LIVE FACE-DETECTION ##
 This Repo Holds A Minor project, I built for My Semester Exams.
 
 
 
-# Introduction: 
+# Introduction
 A face detection system is a computer application for automatically detecting human face from a digital image or a video frame from a video source. Face detection is a pre-processing of face recognition. It is also used for the security system.
 
 # Overview
