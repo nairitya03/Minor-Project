@@ -1,5 +1,6 @@
 # Minor Project On LIVE FACE-DETECTION
-Repo Holds the Minor project that I built for my Semester Exams.
+This Repo Holds A Minor project, I built for My Semester Exams.
+
 
 
 # Introduction: 
