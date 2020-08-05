@@ -2,7 +2,6 @@
 
 import cv2
 
-
 #Creating local Cascade classifiers !
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
@@ -14,6 +13,9 @@ video_capture=cv2.VideoCapture(0)
 #Creating a Name Format for saving the TEST RESULTS !!
 img_counter=0
 
+print("Press \"SpaceBar\" to Save Image")
+print("Press \"Enter\" to Exit Image")
+
 
 while True:
 #Capture Frame-by-Frame Live Stream !!
@@ -24,27 +26,18 @@ while True:
 
 
 #Detecting Face !!
- 
-    faces = faceCascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
-        minSize=(15, 15),
-    )
-    for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
-
+#faces = faceCascade.detectMultiScale(gray,1.3,4)
+    
 
 #Detecting Eyes !!
+#eyes = eyeCascade.detectMultiScale(gray,1.3,6)
 
-    eyes = eyeCascade.detectMultiScale(
-        gray,
-        scaleFactor=1.2,
-        minNeighbors=7,
-        minSize=(30, 30),
-    )
-    for (x, y, w, h) in eyes:
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 230, 255), 2)
+#loop For Continuos Detection !!
+
+    for (x, y, w, h) in faceCascade.detectMultiScale(gray,1.3,4):
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
+        for (x, y, w, h) in eyeCascade.detectMultiScale(gray,1.3,6):
+            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 230, 255), 2)
 
 #Live Result Displaying !!
 

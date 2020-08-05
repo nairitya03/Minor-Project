@@ -31,7 +31,12 @@ while True:
         minNeighbors=5,
         minSize=(20,20),
     )
-    for (x, y, w, h) in faces:
+    for (x, y, w, h) in faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.3,
+        minNeighbors=5,
+        minSize=(20,20),
+    ):
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
 
 
